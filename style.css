@@ -1,0 +1,487 @@
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap : 50px;
+    position: fixed;
+    z-index: 99;
+    padding: 0px 150px;
+    height: 150px;
+    width: 100%;
+}
+
+#nav h4{
+    text-transform: uppercase;
+}
+
+#nav img{
+    height: 80px;
+}
+
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+
+#main{
+    position: relative;
+    background: rgba(0, 0, 0, 0.4);
+    /* z-index: 98; */
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h1{
+    position: relative;
+    font-size: 100px;
+    
+}
+#page1 h2{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+#page1 p{
+    font-size: 20px;
+    width:60%;
+}
+
+#page1 h1::before{
+    content : "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: black;
+    top: -4px;
+    left: -4px;
+    z-index: -1;
+    -webkit-text-stroke: 2px #a3cd0c;
+}
+
+
+
+#page2{
+    min-height : 100vh;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    z-index: 10;
+}
+
+#scrollbar{
+    margin-bottom: 20px;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+#scrollbar::-webkit-scrollbar{
+    display: none;
+}
+
+#scroll{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scrolling;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+}
+
+#scrollbar h4{
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 100px;
+    margin-right: 15px;
+    color : transparent;
+    font-family: 'Kanit';
+    transition: all linear 0.45s;
+    -webkit-text-stroke: 1px #ffffff;
+}
+
+#scrollbar h4:hover{
+    color : #a3cd0c;
+    -webkit-text-stroke: transparent;
+
+}
+@keyframes scrolling {
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+
+#smallcursor{
+    height: 30px;
+    width: 30px;
+    background-color: #9fc70f;
+    border-radius: 50%;
+    position: fixed;
+    transition: scale linear 0.2s;
+    z-index: 99;
+    opacity: 1;
+}
+
+#largecursor{
+    height: 400px;
+    width: 400px;
+    background-color: #9fc70f58;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(70px);
+    z-index: 9;
+}
+
+#about-us{
+    height: 40vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    padding: 0px 50px;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+#about-us-in{
+     width: 50%;
+     text-align: center;
+}
+
+#about-us-in h3{
+    font-size: 54px;
+    margin-bottom: 40px;
+}
+
+#about-us-in p{
+    font-size: 20px;
+    line-height: 29px;
+    font-family:'Segoe UI';
+}
+
+#about-us img{
+    height: 220px;
+    width: 220px;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+#cards-container{
+    height: 50vh;
+    width: 100%;
+    /* background-color: crimson; */
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap : 60px;
+    position: relative;
+    z-index: 10;
+    
+}
+
+.cards{
+    height: 80%;
+    border-radius: 20px;
+    width: 25%;
+    /* background-color: blue; */
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+
+#card1{
+    background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer.jpg?strip=all&lossy=1&sharp=1&ssl=1");
+}
+
+#card2{
+    background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4.jpg?strip=all&lossy=1&sharp=1&ssl=1");
+}
+
+#card3{
+    background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons.jpg?strip=all&lossy=1&sharp=1&ssl=1");
+}
+
+.overlays{
+    height : 100%;
+    width: 100%;
+    border-radius: 20px;
+    padding-top: 90px;
+    padding-left: 20px;
+    opacity : 0;
+    transition: all linear 0.5s;
+    position: absolute;
+    background-color: #9fc70f;
+   
+}
+
+.visibleoverlay{
+    height: 100%;
+    width: 100%;
+    /* background-color: red; */
+    opacity: 1;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.visibleoverlay h1{
+    position: absolute;
+    top : 80%;    
+    width: 100%;
+    text-align: right;
+    padding-right: 9px;
+}
+
+.overlays h2{
+    color: black;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.overlays p{
+    color: black;
+    font-family: 'Times New Roman';
+    line-height: 29px;
+}
+
+.overlays:hover{
+    opacity : 1;
+}
+
+.visibleoverlay:hover{
+    opacity: 0;
+}
+
+#greenLabel{
+    height : 40vh;
+    width: 100%;
+    background: linear-gradient(to right top, #ABDE22, #0A9D3B);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#greenLabel img{
+    height : 100%;
+    width: 13%;
+    object-fit: cover;
+}
+
+#greenLabel #img1{
+    transform : scaleX(-1);
+}
+
+#greenLabel h3{
+    font-size: 40px;
+    text-align: center;
+    color: black;
+}
+
+#page3{
+    height : 100vh;
+    width: 100%;
+    background-color: black;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#page3>p{
+    font-size: 30px;
+    font-family: 'Times New Roman';
+    width: 58%;
+    text-align: center;
+    line-height: 40px;
+    /* position: relative; */
+}
+
+#page3 img{
+    height: 60px;
+    width: 60px;
+    position: absolute;
+}
+
+#colon1{
+    top : 30%;
+    left : 14%;
+}
+
+#colon2{
+    top : 65%;
+    left : 79%;
+}
+
+#page4 {
+    height: 45vh;
+    width: 100%;
+    position: relative;
+}
+
+#page4 #elements{
+    /* height: 37vh; */
+    width : 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    align-items: center;
+    top : 75px;
+}
+
+.elem{
+height: 200px;
+width: 500px;
+overflow: hidden;
+position: relative;
+border-radius: 20px;
+z-index: 99;
+
+}
+
+.elem p{
+transition: all linear 0.4s;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9fc70f;
+    height: 100%;
+    position: absolute;
+    font-size: 40px;
+    width: 100%;
+    z-index: 99
+}
+
+.elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    scale: 1.2;
+    position: absolute;
+
+}
+
+.elem p:hover{
+    background-color: transparent;
+}
+
+#page4 h1{
+    position: absolute;
+    /* align-items: center; */
+    top : 0px;
+    font-size: 90px;
+    text-align: center;
+    width: 100%;
+    color: transparent;
+    -webkit-text-stroke: 2px #ffffff;
+    font-family: 'Georgia';
+}
+
+footer{
+    background: linear-gradient(to right top, #ABDE22, #0A9D3B);
+    width: 100%;
+    height : 300px;
+    position: relative;
+    z-index: 10;
+}
+
+footer>img{
+    height : 100%;
+    width: 10%;
+    object-fit: cover;
+    position: absolute;
+    scale: -1;
+}
+
+#footerTags img{
+    height : 150px;
+    /* position: absolute; */
+    width: 150px;
+    scale : 1.1;
+    transition : all linear 0.2s;
+    /* top : 10%; */
+}
+
+#footerTags{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    position: absolute;
+    height: 70%;
+    justify-content: space-around;
+    font-size: 20px;
+    
+}
+
+#firstTag, #secondTag, #thirdTag{
+    display: flex;
+    flex-direction: column;
+    gap : 20px;
+}
+
+#firstTag h3, #secondTag h3, #thirdTag p{
+    color: black;
+}
+
+#thirdTag p{
+    text-align: left;
+}
+
+#iconDiv{
+    font-size: 40px;
+    position: absolute;
+    top : 55%;
+    width: 100%;
+    left : 6%;
+}
+
+#iconDiv i{
+    transition : all linear 0.3s;
+}
+
+#footerTags>img:hover{
+    scale : 1;
+}
+
+#footerText{
+    width: 100%;
+    position: absolute;
+    top : 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    /* color: black0; */
+}
+
+#footerText p{
+    color : black;
+    padding-right: 10px;
+    border-right: 3px solid black;
+}
